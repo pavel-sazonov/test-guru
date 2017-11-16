@@ -25,6 +25,7 @@ Things you may want to cover:
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+
 * Configuration
 
 * Database creation
@@ -38,4 +39,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Entity list
+  admin
+  user
+  test
+
+
