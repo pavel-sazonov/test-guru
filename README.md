@@ -36,11 +36,8 @@ ruby 2.4.1p111
 * admin
 * user
 * test
-<<<<<<< HEAD
 * question
 * answer
 * result
-=======
->>>>>>> f612e1d8d4d9089d0051e007e3e3caaf151800d9
 
 
