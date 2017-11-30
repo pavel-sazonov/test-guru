@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130155526) do
+ActiveRecord::Schema.define(version: 20171130161105) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "body"
-    t.boolean "correct"
-    t.integer "question_id"
+    t.string "body", null: false
+    t.boolean "correct", null: false
+    t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
