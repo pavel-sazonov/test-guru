@@ -12,6 +12,13 @@ category = Category.create([
   { title: 'mobile'}
   ])
 
-
+test = Test.create([
+  { title: 'Html', level: 0, category_id: 1 },
+  { title: 'CSS', level: 0, category_id: 1 },
+  { title: 'Javascript', level: 1, category_id: 1 },
+  { title: 'Ruby', level: 2, category_id: 2 },
+  { title: 'Rails', level: 3, category_id: 2 },
+  { title: 'Swift', level: 2, category_id: 3 },
+  ])
 
 
