@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  def allTestsByLevel(testLevel)
-    Test.where(level: testLevel)
+  def all_tests_by_level(test_level)
+    Test.where(level: test_level)
   end
 end
