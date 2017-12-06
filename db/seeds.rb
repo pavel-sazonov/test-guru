@@ -42,7 +42,11 @@ answer = Answer.create([
   { body: 'rails c', correct: false, question_id: 5},
   ])
 
-
+user = User.create([
+  { name: 'Pavel' },
+  { name: 'Maria' },
+  { name: 'Semen' },
+  ])
 
 
 
