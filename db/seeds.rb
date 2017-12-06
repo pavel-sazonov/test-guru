@@ -20,11 +20,11 @@ test = Test.create([
   ])
 
 question = Question.create([
-  { title: 'Which tag is used to refer to a paragraph?', test_id: 1 },
-  { title: 'Which tag is used to set background color?', test_id: 2 },
-  { title: 'Show syntax to define a new function?', test_id: 3 },
-  { title: 'What method does use to show amount of elements in array?', test_id: 4 },
-  { title: 'How to start a local server?', test_id: 5 },
+  { body: 'Which tag is used to refer to a paragraph?', test_id: 1 },
+  { body: 'Which tag is used to set background color?', test_id: 2 },
+  { body: 'Show syntax to define a new function?', test_id: 3 },
+  { body: 'What method does use to show amount of elements in array?', test_id: 4 },
+  { body: 'How to start a local server?', test_id: 5 },
   ])
 
 answer = Answer.create([
