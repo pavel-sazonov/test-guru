@@ -1,9 +1,7 @@
 class User < ApplicationRecord
 
-  def all_tests_by_level(test_level)
-    # users_tests - таблица с двумя полями: user_id, test_id
+  def tests_by_level(test_level)
     Test.joins('JOIN users_tests ON users_tests.test_id = tests.id')
-        .where('tests.level = ?', test_level)
-        .pluck('tests.title')
+        .where('tests.level = ? AND users_tests.user_id = ?', test_level, self.id)
   end
 end
