@@ -1,6 +1,8 @@
 class Test < ApplicationRecord
 
+  has_many :questions
   belongs_to :category
+
 
   def self.all_test_title_by_category(category_title)
 
