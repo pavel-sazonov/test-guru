@@ -2,6 +2,7 @@ class Test < ApplicationRecord
 
   has_many :questions
   belongs_to :category
+  belongs_to :user
   # has_and_belongs_to_many :users
   has_many :tests_users
   has_many :users, through: :tests_users
