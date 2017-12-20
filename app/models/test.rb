@@ -17,11 +17,15 @@ class Test < ApplicationRecord
   scope :by_level, -> (level) { where(level: level) }
 
 
-  def self.all_test_title_by_category(category_title)
+  # def self.all_test_title_by_category(category_title)
 
-    Test.joins("JOIN categories ON categories.id = tests.category_id")
-        .where("categories.title = ?", category_title)
-        .order('tests.title DESC')
-        .pluck('tests.title')
-  end
+  #   Test.joins("JOIN categories ON categories.id = tests.category_id")
+  #       .where("categories.title = ?", category_title)
+  #       .order('tests.title DESC')
+  #       .pluck('tests.title')
+  # end
+
+  scope :by_category, -> (category) { joins(:category).where("categories.title = ?", category) }
+  scope :desc, -> { order(title: :desc) }
+  scope :by_category_desc, ->(category) { by_category(category).desc }
 end
