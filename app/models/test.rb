@@ -10,7 +10,10 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
+  validate :validate_bigger_then_zero
+
   validates :title, presence: true
+  validates :level, numericality: { only_integer: true }
 
 
   scope :easy, -> { where(level: 0..1) }
@@ -31,5 +34,11 @@ class Test < ApplicationRecord
   scope :by_category, -> (category) { joins(:category).where("categories.title = ?", category) }
   scope :desc, -> { order(title: :desc) }
   scope :by_category_desc, ->(category) { by_category(category).desc }
+
+  private
+
+  def validate_bigger_then_zero
+    errors.add(:level) if level.to_i <= 0
+  end
 
 end
