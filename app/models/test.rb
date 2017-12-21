@@ -12,7 +12,8 @@ class Test < ApplicationRecord
 
   validate :validate_bigger_then_zero
 
-  validates :title, presence: true
+  validates :title, presence: true,
+                    uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true }
 
 
