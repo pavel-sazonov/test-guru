@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   has_many :authored_tests, class_name: 'Test'
 
+  # у меня вместо атрибута email - name
+  valiates :name, presence: true
+
   # def tests_by_level(level)
   #   Test.joins('JOIN users_tests ON users_tests.test_id = tests.id')
   #       .where('tests.level = ? AND users_tests.user_id = ?', level, self.id)
