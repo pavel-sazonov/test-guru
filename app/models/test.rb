@@ -32,9 +32,15 @@ class Test < ApplicationRecord
   #       .pluck('tests.title')
   # end
 
+
+
   scope :by_category, -> (category) { joins(:category).where("categories.title = ?", category) }
   scope :desc, -> { order(title: :desc) }
-  scope :by_category_desc, ->(category) { by_category(category).desc }
+  # scope :by_category_desc, ->(category) { by_category(category).desc }
+
+  def self.titles_by_category(category_title)
+    by_category(category_title).desc.pluck(:title)
+  end
 
   # private
 
