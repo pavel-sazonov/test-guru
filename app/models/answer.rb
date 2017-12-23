@@ -5,4 +5,10 @@ class Answer < ApplicationRecord
   validates :body, presence: true
 
   scope :correct, -> { where(correct: true) }
+
+  validate :validate_answers
+
+  def validate_answers
+    errors.add(:question, 'there are can be from 1 to 4 answers') if (1..4).include?(question.answers.count)
+  end
 end
