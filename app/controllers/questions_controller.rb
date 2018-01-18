@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: [:index, :create]
   before_action :find_question, only: [:show, :destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_resource_not_found
 
   def index
     render plain: @test.questions.inspect
@@ -18,9 +18,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @test.questions.create(question_params)
+    question = @test.questions.create(question_params)
 
-    render plain: @test.questions.last.inspect
+    render plain: question.inspect
   end
 
   def destroy
@@ -43,7 +43,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:body)
   end
 
-  def rescue_with_question_not_found
-    render plain: 'Question was not found'
-  end
+  # def rescue_with_question_not_found
+  #   render plain: 'Question was not found'
+  # end
 end
