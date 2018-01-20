@@ -1,32 +1,42 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: [:index, :create]
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_test, only: [:create, :new]
+  before_action :find_question, except: [:new, :create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_resource_not_found
 
-  def index
-    render plain: @test.questions.inspect
-  end
-
   def show
-    render plain: @question.inspect
   end
 
   def new
+    @question = @test.questions.new
+  end
 
+  def edit
   end
 
   def create
-    question = @test.questions.create(question_params)
+    @question = @test.questions.create(question_params)
 
-    render plain: question.inspect
+    if @question.persisted?
+      redirect_to @question
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question.destroy
 
-    render plain: "Question: '#{@question.body}' has been destoyed"
+    redirect_to @question.test
   end
 
   private
@@ -42,8 +52,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:body)
   end
-
-  # def rescue_with_question_not_found
-  #   render plain: 'Question was not found'
-  # end
 end
