@@ -1,10 +1,7 @@
 class Test < ApplicationRecord
-
   has_many :questions
   belongs_to :category
 
-  # belongs_to :user
-  # поменял на:
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
 
   # has_many :tests_users
@@ -19,13 +16,11 @@ class Test < ApplicationRecord
                     uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
-
   scope :easy, -> { by_level(0..1) }
   scope :middle, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
 
-  scope :by_level, -> (level) { where(level: level) }
-
+  scope :by_level, ->(level) { where(level: level) }
 
   # def self.all_test_title_by_category(category_title)
 
@@ -35,9 +30,7 @@ class Test < ApplicationRecord
   #       .pluck('tests.title')
   # end
 
-
-
-  scope :by_category, -> (category) { joins(:category).where("categories.title = ?", category) }
+  scope :by_category, ->(category) { joins(:category).where('categories.title = ?', category) }
   scope :desc, -> { order(title: :desc) }
   # scope :by_category_desc, ->(category) { by_category(category).desc }
 
@@ -50,5 +43,4 @@ class Test < ApplicationRecord
   # def validate_bigger_then_zero
   #   errors.add(:level) if level.to_i <= 0
   # end
-
 end
