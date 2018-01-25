@@ -14,12 +14,12 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def complited?
+  def completed?
     current_question.nil?
   end
 
   def success_rate
-    (correct_questions.to_f / test.questions.count.to_f * 100).to_i
+    (correct_questions.to_f / test.questions.count * 100).to_i
   end
 
   def test_done?
