@@ -10,6 +10,6 @@ module TestPassagesHelper
       message = 'Тест не пройден'
     end
 
-    "#{tag.span(percents, class: class_name)}#{tag.br()}#{tag.span(message)}".html_safe
+    "#{tag.span percents, class: class_name}#{tag.br}#{tag.span message}".html_safe
   end
 end
