@@ -1,1 +1,32 @@
 <h1><%= @test_passage.test.title %> Test was Completed!</h1>
+
+<!-- Можно ли использовать инлайновые стили? -->
+<!-- <p>
+  <% percents = @test_passage.success_rate %>
+  <% if @test_passage.test_done? %>
+    <span style="color: green;"><%= "#{percents}%" %></span><br>
+    Тест пройден.
+  <% else %>
+    <span style="color: red;"><%= "#{percents}%" %></span><br>
+    Тест не пройден.
+  <% end %>
+</p> -->
+
+<!-- Через файл стилей -->
+<!-- <p>
+  <% percents = @test_passage.success_rate %>
+  <% if @test_passage.test_done? %>
+    <span class="passed"><%= "#{percents}%" %></span><br>
+    Тест пройден.
+  <% else %>
+    <span class="failed"><%= "#{percents}%" %></span><br>
+    Тест не пройден.
+  <% end %>
+</p> -->
+
+<!-- Через хелпер, но не уверен, каким-то он корявым получися -->
+<p>
+  <%= result(@test_passage) %>
+</p>
+
+<%= link_to 'All tests', '/tests' %>

@@ -38,6 +38,10 @@ class Test < ApplicationRecord
     by_category(category_title).desc.pluck(:title)
   end
 
+  def questions_count
+    questions.count
+  end
+
   # private
 
   # def validate_bigger_then_zero
