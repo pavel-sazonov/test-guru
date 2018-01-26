@@ -1,19 +1,16 @@
 class QuestionsController < ApplicationController
-
-  before_action :find_test, only: [:create, :new]
-  before_action :find_question, except: [:new, :create]
+  before_action :find_test, only: %i[create new]
+  before_action :find_question, except: %i[new create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_resource_not_found
 
-  def show
-  end
+  def show; end
 
   def new
     @question = @test.questions.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @question = @test.questions.create(question_params)

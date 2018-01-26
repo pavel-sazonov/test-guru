@@ -1,0 +1,13 @@
+<h1><%= @test_passage.test.title %> Test was Completed!</h1>
+
+<p>
+  <% if @test_passage.test_passed? %>
+    <span class="passed"><%= percents(@test_passage) %></span><br>
+    Тест пройден.
+  <% else %>
+    <span class="failed"><%= percents(@test_passage) %></span><br>
+    Тест не пройден.
+  <% end %>
+</p>
+
+<%= link_to 'All tests', tests_path %>
