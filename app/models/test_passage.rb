@@ -5,8 +5,9 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question
+  before_validation :before_validation_set_question, on: %i[create update]
+
+  SUCCESS_RATE = 85
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -18,12 +19,12 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def success_rate
+  def rate
     (correct_questions.to_f / test.questions.count * 100).to_i
   end
 
-  def test_done?
-    success_rate >= 85
+  def test_passed?
+    rate >= SUCCESS_RATE
   end
 
   def question_number
@@ -32,12 +33,12 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
-  end
-
-  def before_update_set_next_question
-    self.current_question = next_question
+  def before_validation_set_question
+    self.current_question = if current_question.nil?
+                              first_question
+                            else
+                              next_question
+                            end
   end
 
   def correct_answer?(answer_ids)
@@ -49,6 +50,10 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def first_question
+    test.questions.order(:id).first
   end
 
   def next_question
