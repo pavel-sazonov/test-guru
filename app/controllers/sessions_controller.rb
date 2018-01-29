@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def exit
+    session[:user_id] = nil
+    render :new
+  end
 end
