@@ -1,9 +1,11 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :user_id
+
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   has_secure_password
 
