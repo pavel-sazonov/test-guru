@@ -1,16 +1,13 @@
 class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
-
   has_many :authored_tests, class_name: 'Test', foreign_key: :user_id
 
-  # у меня вместо атрибута email - name
-  validates :name, presence: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
-  # def tests_by_level(level)
-  #   Test.joins('JOIN users_tests ON users_tests.test_id = tests.id')
-  #       .where('tests.level = ? AND users_tests.user_id = ?', level, self.id)
-  # end
+  has_secure_password
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)

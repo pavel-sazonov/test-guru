@@ -1,6 +1,10 @@
 class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_resource_not_found
 
+# если не исключить index, почему-то не срабатывает authenticate_user!,
+# если на странице с тестами удалить куку с сессией
+# и нет редиректа на логин
+  before_action :authenticate_user!, except: :index
   before_action :set_test, only: %i[show edit update destroy start]
   before_action :set_user, only: :start
 
@@ -40,7 +44,7 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
+    current_user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end
 
