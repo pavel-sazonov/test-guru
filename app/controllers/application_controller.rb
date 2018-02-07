@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # private
 
   def after_sign_in_path_for(user)
-    user.is_a?(Admin) ? admin_tests_path : tests_path
+    return admin_tests_path if user.admin?
+    tests_path
   end
 end
