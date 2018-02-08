@@ -4,8 +4,6 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_requried!
 
-  # after_sign_in_path_for :Admin
-
   private
 
   def admin_requried!
