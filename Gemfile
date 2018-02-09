@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Auth
 gem 'devise', '~> 4.0'
 
+# LOCALIZATION
+gem 'rails-i18n', '~> 5.0.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
