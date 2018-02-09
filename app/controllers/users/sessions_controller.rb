@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   def create
     super
-    flash[:notice] = "Hello, #{current_user.first_name} #{current_user.last_name}"
+    flash[:notice] = t('.welcome', full_name: current_user.full_name)
   end
 end

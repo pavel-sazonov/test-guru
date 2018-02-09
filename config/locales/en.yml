@@ -1,33 +1,94 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category:"
+    select:
+      prompt: "Select:"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    nav:
+      welcome: "Welcome"
+      logout: "logout"
+      guru: "Guru"
+      login: "Log in"
+      register: "Register"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      question: "Questions"
+      action: "Action"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "The Test %{title} was Completed!"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        question: "Questions"
+        action: "Action"
+        new_test: "Create Test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      new:
+        header: "Create New Test"
+        back: "Back"
+      edit:
+        header: "Edit %{title} test"
+        back: "Back"
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        new_question: "Create New Question"
+        edit: "Edit"
+        back: "Back"
+        body: "Body"
+        action: "Action"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+    nav:
+      header: "TestGuru Admin Panel"
+      welcome: "Welcome"
+      logout: "logout"
+      guru: "Guru"
+
+  users:
+    sessions:
+      create:
+        welcome: "Welcome, %{full_name}"
+
+  tests_mailer:
+    completed_test:
+      subject: "You jush completed the TestGuru test!"
+

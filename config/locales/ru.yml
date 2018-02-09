@@ -1,0 +1,96 @@
+ru:
+  hello: "Привет, мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория:"
+    select:
+      prompt: "Выберите:"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      guru: "Гуру"
+      login: "Войти"
+      register: "Зарегистрироваться"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      question: "Вопросов"
+      action: "Действие"
+    test:
+      start: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        question: "Вопросов"
+        action: "Действие"
+        new_test: "Создать новый тест"
+      test:
+        show: "Показать"
+        edit: "Отредактировать"
+        delete: "Удалить"
+        sure: "Вы уверены?"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      edit:
+        header: "Отредактировать %{title} тест"
+        back: "Назад"
+      show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        new_question: "Создать новый вопрос"
+        edit: "Отредактировать"
+        back: "Назад"
+        body: "Содержание"
+        action: "Действие"
+    questions:
+      question:
+        show: "Показать"
+        edit: "Отредактировать"
+        delete: "Удалить"
+        sure: "Вы уверены?"
+    nav:
+      header: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      guru: "Гуру"
+
+  users:
+    sessions:
+      create:
+        welcome: "Добро пожаловать, %{full_name}"
+
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
