@@ -86,7 +86,7 @@ en:
   users:
     sessions:
       create:
-        welcome: "Welcome"
+        welcome: "Welcome, %{full_name}"
 
   tests_mailer:
     completed_test:

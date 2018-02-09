@@ -88,7 +88,7 @@ ru:
   users:
     sessions:
       create:
-        welcome: "Добро пожаловать"
+        welcome: "Добро пожаловать, %{full_name}"
 
 
   tests_mailer:
