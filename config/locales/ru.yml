@@ -11,6 +11,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория:"
+    select:
+      prompt: "Выберите:"
 
   shared:
     errors:
@@ -23,6 +25,12 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      question: "Вопросов"
+      action: "Действие"
+    test:
+      start: "Старт"
 
   test_passages:
     result:
@@ -34,6 +42,42 @@ ru:
         success: "Тест успешно создан."
       index:
         header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        question: "Вопросов"
+        action: "Действие"
+        new_test: "Создать новый тест"
+      test:
+        show: "Показать"
+        edit: "Отредактировать"
+        delete: "Удалить"
+        sure: "Вы уверены?"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      edit:
+        header: "Отредактировать %{title} тест"
+        back: "Назад"
+      show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        new_question: "Создать новый вопрос"
+        edit: "Отредактировать"
+        back: "Назад"
+        body: "Содержание"
+        action: "Действие"
+    questions:
+      question:
+        show: "Показать"
+        edit: "Отредактировать"
+        delete: "Удалить"
+        sure: "Вы уверены?"
+
+  users:
+    sessions:
+      create:
+        welcome: "Добро пожаловать"
 
 
   tests_mailer:

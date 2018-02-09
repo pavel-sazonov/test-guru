@@ -11,6 +11,8 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category:"
+    select:
+      prompt: "Select:"
 
   shared:
     errors:
@@ -21,6 +23,12 @@ en:
   tests:
     index:
       header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      question: "Questions"
+      action: "Action"
+    test:
+      start: "Start"
 
   test_passages:
     result:
@@ -32,6 +40,42 @@ en:
         success: "Test was successfully created"
       index:
         header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        question: "Questions"
+        action: "Action"
+        new_test: "Create Test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+      new:
+        header: "Create New Test"
+        back: "Back"
+      edit:
+        header: "Edit %{title} test"
+        back: "Back"
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        new_question: "Create New Question"
+        edit: "Edit"
+        back: "Back"
+        body: "Body"
+        action: "Action"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "Are you sure?"
+
+  users:
+    sessions:
+      create:
+        welcome: "Welcome"
 
   tests_mailer:
     completed_test:
