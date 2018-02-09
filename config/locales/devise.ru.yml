@@ -56,7 +56,8 @@ ru:
         characters_minimum: "минимум %{length} символов"
         current_password: "Введите текущий пароль для подтверждения"
         cancel:  "Удалить мой аккаунт"
-        shure: "Вы уверены?"
+        sure: "Вы уверены?"
+        back: "Назад"
 
     sessions:
       signed_in: "Вход в систему выполнен."

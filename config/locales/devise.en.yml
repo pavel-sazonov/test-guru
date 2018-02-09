@@ -60,7 +60,8 @@ en:
         current_password: "we need your current password to confirm your changes"
         update: "Update"
         cancel:  "Cancel my account"
-        shure: "Are you sure?"
+        sure: "Are you sure?"
+        back: "Back"
 
     sessions:
       signed_in: "Signed in successfully."
