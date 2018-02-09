@@ -21,6 +21,12 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      guru: "Гуру"
+      login: "Войти"
+      register: "Зарегистрироваться"
 
   tests:
     index:
@@ -73,6 +79,11 @@ ru:
         edit: "Отредактировать"
         delete: "Удалить"
         sure: "Вы уверены?"
+    nav:
+      header: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      guru: "Гуру"
 
   users:
     sessions:

@@ -19,6 +19,12 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      welcome: "Welcome"
+      logout: "logout"
+      guru: "Guru"
+      login: "Log in"
+      register: "Register"
 
   tests:
     index:
@@ -71,6 +77,11 @@ en:
         edit: "Edit"
         delete: "Delete"
         sure: "Are you sure?"
+    nav:
+      header: "TestGuru Admin Panel"
+      welcome: "Welcome"
+      logout: "logout"
+      guru: "Guru"
 
   users:
     sessions:
