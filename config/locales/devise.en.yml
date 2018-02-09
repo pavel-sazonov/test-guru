@@ -6,6 +6,9 @@ en:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      new:
+        header: "Resend confirmation instructions"
+        resend: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -36,6 +39,7 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -44,6 +48,20 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      new:
+        header: "Become a Guru"
+        characters_minimum: "%{length} characters minimum"
+        sign_up: "Sign up"
+      edit:
+        header: "Edit %{humanize}"
+        waiting: "Currently waiting confirmation for: %{unconfirmed_email}"
+        leave_blank: "leave blank if you don't want to change it"
+        characters_minimum: "%{length} characters minimum"
+        current_password: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel:  "Cancel my account"
+        shure: "Are you sure?"
+
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
@@ -54,6 +72,17 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_your_password: "Forgot your password?"
+        confirmation_instructions?: "Didn't receive confirmation instructions?"
+        unlock_instructions: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{camelize}"
+
+
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
@@ -70,3 +99,11 @@ en:
       user:
         create: "Enter"
 
+    label:
+      user:
+        email: "Email:"
+        password: "Password:"
+        password_confirmation: "Confirm password:"
+        remember_me: "Remember me"
+        first_name: "First name:"
+        last_name: "Last name:"
