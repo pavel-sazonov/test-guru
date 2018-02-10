@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <%= link_to 'Test Guru', root_path, class: 'navbar-brand' %>
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <% if current_user && current_user.admin? %>
     <%= link_to t('.admin_panel'), admin_tests_path, class: 'nav-link' %>
   <% end %>
