@@ -20,6 +20,7 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     nav:
+      admin_panel: "Admin panel"
       welcome: "Welcome"
       logout: "logout"
       guru: "Guru"

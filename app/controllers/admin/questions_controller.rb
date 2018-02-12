@@ -1,5 +1,4 @@
 class Admin::QuestionsController < Admin::BaseController
-  # before_action :authenticate_user!
   before_action :find_test, only: %i[create new]
   before_action :find_question, except: %i[new create]
 
