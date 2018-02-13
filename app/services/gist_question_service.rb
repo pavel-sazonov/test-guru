@@ -1,10 +1,9 @@
 class GistQuestionService
-  ACESS_TOKEN = '06ca2a9edfb012387a4dd0612ff42952a11c7bbe'
 
   def initialize(question, client: nil)
     @question = question
     @test = question.test
-    @client = client || Octokit::Client.new(access_token: ACESS_TOKEN)
+    @client = client || Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def call
@@ -16,6 +15,7 @@ class GistQuestionService
   def gist_params
     {
       description: I18n.t('description', test_title: @test.title),
+      public: true,
       files: {
         I18n.t('file_name') => {
           content: gist_content
