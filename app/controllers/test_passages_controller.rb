@@ -18,8 +18,10 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    gist_link = view_context.link_to 'gist', result.html_url, target: 'blank'
+    question = @test_passage.current_question
+    result = GistQuestionService.new(question).call
+    gist_link = view_context.link_to 'gist', result.html_url, target: :blank
+    Gist.create(user: @test_passage.user, question: question, url: result.html_url)
 
     flash_options = if result
                       { notice: "#{t('.success')}: #{gist_link}" }
