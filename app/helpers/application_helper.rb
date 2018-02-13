@@ -1,4 +1,6 @@
 module ApplicationHelper
+  FLASH_TYPE = { 'notice' => 'success', 'alert' => 'warning' }.freeze
+
   def year
     Date.current.year
   end
@@ -8,13 +10,7 @@ module ApplicationHelper
   end
 
   def flash_class(key)
-    if key == 'notice'
-      "alert alert-success"
-    elsif key == 'alert'
-      "alert alert-warning"
-    else
-      "alert alert-danger"
-    end
+    css_class = FLASH_TYPE[key] || 'danger'
+    "alert alert-#{css_class}"
   end
 end
-#
