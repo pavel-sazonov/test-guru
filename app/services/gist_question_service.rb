@@ -17,7 +17,6 @@ class GistQuestionService
     {
       description: I18n.t('description', test_title: @test.title),
       files: {
-        # "test-guru-question.txt" => {
         I18n.t('file_name') => {
           content: gist_content
         }
