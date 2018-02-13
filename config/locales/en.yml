@@ -89,6 +89,12 @@ en:
       welcome: "Welcome"
       logout: "logout"
       guru: "Guru"
+    gists:
+      index:
+        header: "Saved users gists"
+        question: "Question"
+        url: "URL"
+        email: "email"
 
   users:
     sessions:

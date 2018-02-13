@@ -46,7 +46,6 @@ ru:
       success: "Gist успешно сохранен, перейти: %{gist_link}"
       failure: "Во время сохранения gist произошла ошибка"
 
-
   description: "Вопрос теста %{test_title} из приложения TestGuru"
   file_name: "тест-гуру-вопрос.txt"
 
@@ -92,6 +91,13 @@ ru:
       welcome: "Добро пожаловать"
       logout: "Выйти"
       guru: "Гуру"
+    gists:
+      index:
+        header: "Сохраненные гисты пользователей"
+        question: "Вопрос"
+        url: "Ссылка"
+        email: "Почта"
+
 
   users:
     sessions:
