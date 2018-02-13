@@ -23,9 +23,9 @@ class TestPassagesController < ApplicationController
     result = service.call
     gist_link = view_context.link_to 'gist', result.html_url, target: :blank
 
-    Gist.create(user: @test_passage.user, question: question, url: result.html_url)
-
     flash_options = if service.success?
+                      Gist.create(user: @test_passage.user, question: question, url: result.html_url)
+
                       { notice: t('.success', gist_link: gist_link) }
                     else
                       { alert: t('.failure') }
