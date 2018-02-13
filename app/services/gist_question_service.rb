@@ -1,5 +1,4 @@
 class GistQuestionService
-
   def initialize(question, client: nil)
     @question = question
     @test = question.test
@@ -8,6 +7,10 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    @client.last_response.status == 201
   end
 
   private
