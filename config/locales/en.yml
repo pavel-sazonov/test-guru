@@ -44,6 +44,9 @@ en:
       success: "Gist was successfully created"
       failure: "An error occurred while saving gist"
 
+  description: "A question about %{test_title} from TestGuru"
+  file_name: "test-guru-question.txt"
+
   admin:
     tests:
       create:
