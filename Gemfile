@@ -30,11 +30,17 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.11'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Auth
 gem 'devise', '~> 4.0'
 
 # LOCALIZATION
 gem 'rails-i18n', '~> 5.0.0'
+
+# NETWORKING
+
+gem "octokit", "~> 4.0"
 
 # UI
 gem 'jquery-rails'

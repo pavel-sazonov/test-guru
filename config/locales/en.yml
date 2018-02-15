@@ -40,6 +40,12 @@ en:
   test_passages:
     result:
       header: "The Test %{title} was Completed!"
+    gist:
+      success: "Gist was successfully created, link: %{gist_link}"
+      failure: "An error occurred while saving gist"
+
+  description: "A question about %{test_title} from TestGuru"
+  file_name: "test-guru-question.txt"
 
   admin:
     tests:
@@ -83,6 +89,12 @@ en:
       welcome: "Welcome"
       logout: "logout"
       guru: "Guru"
+    gists:
+      index:
+        header: "Saved users gists"
+        question: "Question"
+        url: "URL"
+        email: "email"
 
   users:
     sessions:
