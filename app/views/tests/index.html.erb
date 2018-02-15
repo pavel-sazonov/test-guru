@@ -8,10 +8,14 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <td scope="col"><%= t('.title') %></th>
-          <td scope="col"><%= t('.level') %></th>
-          <td scope="col"><%= t('.question') %></th>
-          <td scope="col"><%= t('.action') %></th>
+          <th class="sort-by-title pointer" scope="col">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th scope="col"><%= t('.level') %></th>
+          <th scope="col"><%= t('.question') %></th>
+          <th scope="col"><%= t('.action') %></th>
         </tr>
       </thead>
 
