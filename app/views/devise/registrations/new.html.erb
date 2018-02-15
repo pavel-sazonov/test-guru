@@ -29,10 +29,12 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= octicon 'check', height: 25, class: 'text-success hide' %>
+    <%= octicon 'circle-slash', height: 25, class: 'text-danger hide' %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.sign_up') %>
+    <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 
