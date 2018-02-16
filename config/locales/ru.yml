@@ -80,6 +80,8 @@ ru:
         back: "Назад"
         body: "Содержание"
         action: "Действие"
+      form_inline:
+        submit: "ОК"
     questions:
       question:
         show: "Показать"

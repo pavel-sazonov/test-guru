@@ -78,6 +78,8 @@ en:
         back: "Back"
         body: "Body"
         action: "Action"
+      form_inline:
+        submit: "OK"
     questions:
       question:
         show: "Show"
