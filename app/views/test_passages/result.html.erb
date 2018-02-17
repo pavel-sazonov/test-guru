@@ -1,13 +1,33 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
 
-<p>
-  <% if @test_passage.test_passed? %>
-    <span class="passed"><%= percents(@test_passage) %></span><br>
-    Тест пройден.
-  <% else %>
-    <span class="failed"><%= percents(@test_passage) %></span><br>
-    Тест не пройден.
-  <% end %>
-</p>
+    <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<%= link_to 'All tests', tests_path %>
+    <h6><%= t('.indicator') %>:</h6>
+
+    <div class="progress">
+      <%= content_tag :div,
+                      '40%',
+                      class: 'progress-bar',
+                      role: 'progressbar',
+                      aria_valuenow: '40',
+                      aria_valuemin: '0',
+                      aria_valuemax: '100',
+                      style: 'width:40%'
+                       %>
+
+    </div>
+
+    <p>
+      <% if @test_passage.test_passed? %>
+        <span class="passed"><%= percents(@test_passage) %></span><br>
+        Тест пройден.
+      <% else %>
+        <span class="failed"><%= percents(@test_passage) %></span><br>
+        Тест не пройден.
+      <% end %>
+    </p>
+
+    <%= link_to 'All tests', tests_path %>
+  </div>
+</div>

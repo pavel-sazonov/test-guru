@@ -38,8 +38,12 @@ en:
       start: "Start"
 
   test_passages:
+    show:
+      header: "Passing the %{title} test"
+      indicator: "Test passage progress"
     result:
       header: "The Test %{title} was Completed!"
+      indicator: "Test passage progress"
     gist:
       success: "Gist was successfully created, link: %{gist_link}"
       failure: "An error occurred while saving gist"
@@ -78,6 +82,8 @@ en:
         back: "Back"
         body: "Body"
         action: "Action"
+      form_inline:
+        submit: "OK"
     questions:
       question:
         show: "Show"
