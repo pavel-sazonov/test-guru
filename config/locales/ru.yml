@@ -36,8 +36,14 @@ ru:
       level: "Уровень"
       question: "Вопросов"
       action: "Действие"
+      feedback: "Отправить отзыв"
     test:
       start: "Старт"
+
+  feedbacks:
+    new:
+      header: "Отправить отзыв"
+      send: "Отправить"
 
   test_passages:
     show:
@@ -46,6 +52,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
       indicator: "Прогресс прохождения теста"
+      feedback: "Отправить отзыв"
     gist:
       success: "Gist успешно сохранен, перейти: %{gist_link}"
       failure: "Во время сохранения gist произошла ошибка"

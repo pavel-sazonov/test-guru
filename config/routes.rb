@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'tests#index'
 
   devise_for :users,
@@ -7,10 +8,6 @@ Rails.application.routes.draw do
              controllers: { sessions: 'users/sessions' }
 
   resources :tests, only: :index do
-    # resources :questions, shallow: true, except: :index do
-    #   resources :answers, shallow: true, except: :index
-    # end
-
     member do
       post :start
     end
@@ -35,4 +32,6 @@ Rails.application.routes.draw do
 
     resources :gists, only: :index
   end
+
+  resources :feedbacks, only: %i[new create]
 end

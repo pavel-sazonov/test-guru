@@ -34,8 +34,14 @@ en:
       level: "Level"
       question: "Questions"
       action: "Action"
+      feedback: "Feedback"
     test:
       start: "Start"
+
+  feedbacks:
+    new:
+      header: "Send feedback"
+      send: "Send"
 
   test_passages:
     show:
@@ -44,6 +50,7 @@ en:
     result:
       header: "The Test %{title} was Completed!"
       indicator: "Test passage progress"
+      feedback: "Send feedback"
     gist:
       success: "Gist was successfully created, link: %{gist_link}"
       failure: "An error occurred while saving gist"
