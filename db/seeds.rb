@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!([
-  { email: 'admin@testguru.ru', first_name: 'Pavel', last_name: 'Sazonov',
-               password: '134679', type: 'Admin' },
-  ])
-puts 'Users was created!'
+# user = User.create!([
+#   { email: 'admin@testguru.ru', first_name: 'Pavel', last_name: 'Sazonov',
+#                password: '134679', type: 'Admin' },
+#   ])
+# puts 'Users was created!'
 
 category = Category.create!([
   { title: 'frontend'},
@@ -19,11 +19,11 @@ category = Category.create!([
 puts 'Categories was created!'
 
 test = Test.create!([
-  { title: 'Html', level: 1, category_id: 1, user_id: 1 },
-  { title: 'CSS', level: 1, category_id: 1, user_id: 1 },
-  { title: 'Javascript', level: 1, category_id: 1, user_id: 1 },
-  { title: 'Ruby', level: 2, category_id: 2, user_id: 1 },
-  { title: 'Rails', level: 3, category_id: 2, user_id: 1 },
+  { title: 'Html', level: 1, category_id: 1, user_id: 10 },
+  { title: 'CSS', level: 1, category_id: 1, user_id: 10 },
+  { title: 'Javascript', level: 1, category_id: 1, user_id: 10 },
+  { title: 'Ruby', level: 2, category_id: 2, user_id: 10 },
+  { title: 'Rails', level: 3, category_id: 2, user_id: 10 },
   ])
 puts 'Tests was created!'
 
