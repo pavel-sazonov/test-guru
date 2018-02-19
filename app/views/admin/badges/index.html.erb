@@ -1,0 +1,24 @@
+<h1><%= t('.header') %></h1>
+
+<!-- <p>
+  <%#= link_to t('.new_test'), new_admin_test_path %>
+</p> -->
+
+<%#= render 'shared/errors', resource: @ba %>
+
+<table class="table">
+  <tr>
+    <th>Badge</th>
+    <th class="sort-by-title pointer">
+      <%= t('.name') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
+    <th><%#= t('.question') %></th>
+    <th colspan="3"><%= t('.action') %>:</th>
+  </tr>
+
+  <%= render @badges %>
+</table>
+
+<p><%#= link_to 'all gists', admin_gists_path %></p>
