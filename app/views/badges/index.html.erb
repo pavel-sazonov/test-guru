@@ -1,0 +1,15 @@
+<h1><%= t('.header') %></h1>
+
+<table class="table">
+  <tr>
+    <th>Badge</th>
+    <th> <%= t('.name') %></th>
+    <th><%= t('.rule') %></th>
+  </tr>
+
+  <%= render @badges %>
+</table>
+
+<p>
+  <%= link_to 'all tests', tests_path %>
+</p>

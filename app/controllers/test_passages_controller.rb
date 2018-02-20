@@ -4,7 +4,32 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    if @test_passage.completed? && current_user.test_passages.count == 1
+      current_user.add_badge('first test completed')
+      flash.now[:notice] = 'You archive badge!'
+    end
+
+    if @test_passage.test_passed? && current_user.test_passages.where(correct_questions: 1).count == 1
+      current_user.add_badge('first test passed')
+      flash.now[:notice] = 'You archive badge!'
+    end
+
+    if current_user.passed_frontend_tests? && @test_passage.correct_questions == 1 && @test_passage.test.category_id == 1
+      current_user.add_badge('all frontend tests passed')
+      flash.now[:notice] = 'You archive badge!'
+    end
+
+    if current_user.passed_backend_tests? && @test_passage.correct_questions == 1 && @test_passage.test.category_id == 2
+      current_user.add_badge('all backend tests passed')
+      flash.now[:notice] = 'You archive badge!'
+    end
+
+    if current_user.passed_all_tests? && @test_passage.correct_questions == 1
+      current_user.add_badge('all tests passed')
+      flash.now[:notice] = 'You archive badge!'
+    end
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
