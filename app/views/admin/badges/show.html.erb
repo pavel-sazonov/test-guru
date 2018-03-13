@@ -9,10 +9,15 @@
 
 <p>
   <strong><%= t('.rule') %>:</strong>
-  <%= @badge.rule.body %>
+  <%= @badge.rule %>
+</p>
+
+<p>
+  <strong><%= t('.rule') %>:</strong>
+  <%= @badge.rule_value %>
 </p>
 
 <p>
   <%= link_to t('.edit'), edit_admin_badge_path(@badge) %>
-  <%= link_to t('.back'), admin_badges_path %>
+  <%= link_to t('.back'), badges_path %>
 </p>

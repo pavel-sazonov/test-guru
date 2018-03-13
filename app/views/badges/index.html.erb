@@ -1,15 +1,24 @@
 <h1><%= t('.header') %></h1>
 
+<% if current_user.admin? %>
+  <%= link_to 'Create badge', new_admin_badge_path  %>
+<% end %>
+
 <table class="table">
   <tr>
     <th>Badge</th>
     <th> <%= t('.name') %></th>
     <th><%= t('.rule') %></th>
+    <th><%= t('.rule_value') %></th>
+    <% if current_user.admin? %>
+      <th colspan="3"><%= t('.action') %>:</th>
+    <% end %>
   </tr>
 
   <%= render @badges %>
 </table>
 
 <p>
-  <%= link_to 'all tests', tests_path %>
+  <%= link_to 'tests', tests_path %> |
+  <%= link_to 'earned badges', user_badges_path  %>
 </p>

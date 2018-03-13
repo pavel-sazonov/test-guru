@@ -1,14 +1,15 @@
 <h1><%= t('.header') %></h1>
 
-<p>Choose new badge:</p>
+<p>Choose badge:</p>
 
-<p>
-  1.<%= image_tag('1.png', size: "48") %>
-  2.<%= image_tag('2.png', size: "48") %>
-  3.<%= image_tag('3.png', size: "48") %>
-  4.<%= image_tag('4.png', size: "48") %>
-  5.<%= image_tag('5.png', size: "48") %>
-</p>
+
+<ol>
+  <li><%= image_tag('1.png', size: "48") %></li>
+  <li><%= image_tag('2.png', size: "48") %></li>
+  <li><%= image_tag('3.png', size: "48") %></li>
+  <li><%= image_tag('4.png', size: "48") %></li>
+  <li><%= image_tag('5.png', size: "48") %></li>
+</ol>
 
 <%= render 'form' %>
 <%= link_to t('.back'), admin_badges_path %>

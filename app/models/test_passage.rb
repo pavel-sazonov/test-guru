@@ -18,6 +18,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def correct?
+    correct_questions == 1
+  end
+
   def rate
     (correct_questions.to_f / test.questions.count * 100).to_i
   end

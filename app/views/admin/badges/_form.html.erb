@@ -2,8 +2,7 @@
   <%= render 'shared/errors', resource: @badge %>
 
   <p>
-    Choose number:
-    <%#= form.label :file %>
+    Choose badge number:
     <%= form.select :file, options_for_select([
                                               [1, '1.png'],
                                               [2, '2.png'],
@@ -20,17 +19,20 @@
   </p>
 
   <p>
-    <%= form.label :rule_id %>:
-    <%= form.collection_select :rule_id, Rule.all, :id, :body, prompt: true %>
+    <%= form.label :rule %>:
+    <%= form.select :rule, options_for_select([
+                                              ['level', 'level'],
+                                              ['category', 'category'],
+                                              ['attempt', 'attempt']
+                                              ]) %>
+  </p>
+
+  <p>
+    <%= form.label :rule_value %>:
+    <%= form.text_field :rule_value, id: :badge_rule_value %>
   </p>
 
 
 
   <p><%= form.submit class: 'btn btn-primary' %></p>
 <% end %>
-
-
-
-  <%#= form.text_field :title, class: 'form_control mr-2' %>
-  <%#= form.submit t('.submit'), class: 'btn btn-primary' %>
-

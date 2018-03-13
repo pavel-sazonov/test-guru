@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :badges, only: :index
+  resources :badges, only: %i[index]
+
+  get '/user_badges', to: 'badges#user_badges'
 
   # GET /test_passages/101/result
   resources :test_passages, only: %i[show update] do
@@ -34,7 +36,7 @@ Rails.application.routes.draw do
 
     resources :gists, only: :index
 
-    resources :badges
+    resources :badges, except: :index
   end
 
   resources :feedbacks, only: %i[new create]
