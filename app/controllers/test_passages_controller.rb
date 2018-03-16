@@ -5,11 +5,11 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    # user_badges_count = current_user.badges.count
+    user_badges_count = current_user.badges.count
 
     AwardWithBadges.new(@test_passage).call if @test_passage.correct?
 
-    # flash.now[:notice] = 'You have earned new badge!' if current_user.badges.count > user_badges_count
+    flash.now[:notice] = 'You have earned new badge!' if current_user.badges.count > user_badges_count
   end
 
   def update

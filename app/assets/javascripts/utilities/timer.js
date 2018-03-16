@@ -1,15 +1,20 @@
 document.addEventListener('turbolinks:load', function() {
   var timer = document.getElementById('timer')
-  var done = document.getElementById('done')
 
-  if (timer) { changeTimer() }
+  if (timer) { changeTimer(timer) }
 })
 
 
-function changeTimer() {
-    if (timer.value >= timer.max) {
+function changeTimer(timer) {
+    startPoint = timer.dataset.startPoint
+    timeAmount = timer.dataset.timeAmount
+    timeNow = (Date.now() / 1000).toFixed()
+    passedTime = timeNow - startPoint
+
+    if (passedTime >= timeAmount) {
         location.href = timer.dataset.resultLink
     }
-    timer.value++;
-    setTimeout(changeTimer, 100);
+
+    timer.textContent = timeAmount - (passedTime)
+    setTimeout(changeTimer, 1000, timer);
 }

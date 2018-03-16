@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  var bar = document.getElementById('progress')
+  var bar = document.querySelector('.progress-bar')
 
   if (bar) { changeProgress(bar) }
 })

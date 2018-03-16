@@ -50,7 +50,7 @@ ru:
       header: "Прохождение %{title} теста"
       indicator: "Прогресс прохождения теста"
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       indicator: "Прогресс прохождения теста"
       feedback: "Отправить отзыв"
     gist:
