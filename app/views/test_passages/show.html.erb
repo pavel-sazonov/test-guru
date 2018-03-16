@@ -7,18 +7,29 @@
 
     <div class="progress">
       <%= content_tag :div,
-                      '40%',
+                      '0%',
+                      id: 'progress',
                       class: 'progress-bar',
                       role: 'progressbar',
-                      aria_valuenow: '40',
+                      aria_valuenow: '0',
                       aria_valuemin: '0',
                       aria_valuemax: '100',
-                      style: 'width:40%',
                       data: { questions_count: @test_passage.test.questions_count,
                               question_number: @test_passage.question_number }
                        %>
 
-    </div>
+    </div></br>
+
+    <p>Test time left:</p>
+    <!-- <progress id="timer" value="0" max="100"></progress> -->
+    <%= content_tag :progress,
+                    'seconds',
+                    id: 'timer',
+                    value: '0',
+                    max: '30',
+                    data: { result_link: result_test_passage_url(@test_passage) }
+     %>
+    <p id="done"></p>
 
     <p>
       <b><%= @test_passage.current_question.body %></b>
