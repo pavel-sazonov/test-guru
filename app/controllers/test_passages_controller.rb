@@ -4,13 +4,19 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    user_badges_count = current_user.badges.count
+
+    AwardWithBadges.new(@test_passage).call if @test_passage.correct?
+
+    flash.now[:notice] = 'You have earned new badge!' if current_user.badges.count > user_badges_count
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+      # TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
