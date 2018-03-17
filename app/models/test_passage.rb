@@ -19,7 +19,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct?
-    correct_questions == 1
+    correct_questions == test.questions.count
   end
 
   def rate
