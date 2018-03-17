@@ -20,10 +20,10 @@
     </div></br>
 
     <p>Test time left: <%= content_tag :span,
-                                       '0',
+                                       @test_passage.test.timer,
                                        id: 'timer',
                                        data: { result_link: result_test_passage_url(@test_passage),
-                                               start_point: @test_passage.created_at.to_i,
+                                               start_time: @test_passage.created_at.to_i,
                                                time_amount: @test_passage.test.timer }
                         %>sec.</p>
     <!-- <progress id="timer" value="0" max="100"></progress> -->

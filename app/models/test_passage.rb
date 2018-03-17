@@ -34,6 +34,10 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def time_over?
+    (Time.now.to_i - created_at.to_i) >= test.timer
+  end
+
   private
 
   def before_validation_set_question

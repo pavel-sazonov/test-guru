@@ -6,10 +6,10 @@ document.addEventListener('turbolinks:load', function() {
 
 
 function changeTimer(timer) {
-    let startPoint = timer.dataset.startPoint,
+    let startTime = timer.dataset.startTime,
         timeAmount = timer.dataset.timeAmount,
         timeNow = (Date.now() / 1000).toFixed(),
-        passedTime = timeNow - startPoint
+        passedTime = timeNow - startTime
 
     if (passedTime >= timeAmount) {
         location.href = timer.dataset.resultLink
