@@ -11,7 +11,8 @@ function changeTimer(timer) {
         timeNow = (Date.now() / 1000).toFixed(),
         passedTime = timeNow - startTime
 
-    if (passedTime >= timeAmount) {
+    if (passedTime > timeAmount) {
+        alert('Time is over, test was interrupted!')
         location.href = timer.dataset.resultLink
     }
 
