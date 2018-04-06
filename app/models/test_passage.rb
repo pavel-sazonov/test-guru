@@ -19,7 +19,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct?
-    correct_questions == 1
+    correct_questions == test.questions.count
   end
 
   def rate
@@ -32,6 +32,10 @@ class TestPassage < ApplicationRecord
 
   def question_number
     test.questions.index(current_question) + 1
+  end
+
+  def time_over?
+    (Time.now.to_i - created_at.to_i) >= test.timer
   end
 
   private
